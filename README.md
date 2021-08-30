@@ -18,14 +18,24 @@ Please ensure that the chessboard is paste to a flat surface.
     - find_intrinsic_params: Put the chessboard location from multiple images to get the intrinsic params.
     - undistort: Use the intrinsic params to calibrate the image.
     - plot_3d_eval: Plot the camera location of each image.
+    - Usage:
+    ```
+    python intrinsic.py
+    ```
 
-2. intrinsic_eval: Validate the performance of intrinsic calibration. Calculate the intrinsic params from the calibrated image and compare both intrinsic params. if intrinsic params of calibrated image is smaller, the calibration is success. Take the following result for example, calibrated distortion coefficient is smaller than uncalibrated one. As a result, the calibration is success.
-```
-uncalibrated dist [[ 0.01000685 -0.04064247  0.00164267  0.00092834  0.04390772]]
-calibrated dist [[ 0.00083999  0.0018685   0.00036592 -0.00045816 -0.00323504]]
-```
+2. intrinsic_eval: 
+    - Intro: Validate the performance of intrinsic calibration. Calculate the intrinsic params from the calibrated image and compare both intrinsic params. if intrinsic params of calibrated image is smaller, the calibration is success. Take the following result for example, calibrated distortion coefficient is smaller than uncalibrated one. As a result, the calibration is success.
+    ```
+    uncalibrated dist [[ 0.01000685 -0.04064247  0.00164267  0.00092834  0.04390772]]
+    calibrated dist [[ 0.00083999  0.0018685   0.00036592 -0.00045816 -0.00323504]]
+    ```
+    - Usage
+    ```
+    python intrinsic_eval.py
+    ```
 
-3. extrinsic: Calibrate the relation location and rotation of stereo camera. **This is not finished.**.
+3. extrinsic: 
+    - Intro: Calibrate the relation location and rotation of stereo camera. **This is not finished.**.
 
 4. aero_triangulation: provide aero_triangulation calculation functions to do the conversion between 2D image pixels and 3D real-world points.
 
