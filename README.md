@@ -30,4 +30,32 @@ calibrated dist [[ 0.00083999  0.0018685   0.00036592 -0.00045816 -0.00323504]]
 4. aero_triangulation: provide aero_triangulation calculation functions to do the conversion between 2D image pixels and 3D real-world points.
 
 # Data
-1. Location: 
+1. Location: Z:\R014_Jeremy\RawData\CamCalibration
+```
+├─assets
+│  ├─checkboard_src     
+│  └─chessboard_shortcut
+├─images
+│  ├─Stereo20210723     
+│  │  ├─videocap_20210723180801
+│  │  ├─videocap_20210723181402
+│  │  ├─videocap_20210723181858
+│  │  └─videocap_20210723182805
+│  ├─Stereo20210726
+│  │  ├─videocap_20210726170727
+│  │  └─videocap_20210727152040
+│  ├─Stereo20210727
+│  │  ├─videocap_20210728164254
+│  │  └─videocap_20210728165049
+│  └─Testing
+│      ├─videocap_20210706164922
+│      ├─videocap_20210707121346
+│      └─videocap_20210707130315
+├─pkls
+└─__pycache__
+```
+
+2. intro
+    - images/Stereo20210726: Used for single camera intrinsic calibration.
+    - images/Stereo20210727: Used for stereo camera relational extrinsic calibration.
+    - pkls: Temp files.
