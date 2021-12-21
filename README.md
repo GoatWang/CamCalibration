@@ -12,6 +12,24 @@ It recommended to print the [chessboard](checkboard_src/Checkerboard-A3-35mm-10x
 ## Notice
 Please ensure that the chessboard is paste to a flat surface.
 
+## Usage
+```
+from intrinsic import get_chessboard_mapping, find_intrinsic_params, undistort
+WIDTH, HEIGHT = 710, 710 # image size
+PIXEL_SIZE = 0.00274 * 4 # in mm(µm/1000) unit, no need if focal length (in mm unit) not needed
+CHECKERBOARD = (7, 10) # the `point` (not block) on the chessboard
+BLOCK_SIZE = 34 # in mm unit, the size of the block on the chessboard
+img_dir = 'chessboard'
+img_fps = glob.glob(img_dir+r'\*.png')
+
+# get intrinsic params
+objpoints, imgpoints = get_chessboard_mapping(img_fps, CHECKERBOARD, BLOCK_SIZE, imshow=False)
+ret, mtx_ori, dist, rvecs, tvecs, mtx, roi = find_intrinsic_params(objpoints, imgpoints, (HEIGHT, WIDTH))
+
+# apply to calibrate images
+imgs = [undistort(cv2.imread(img_fp), mtx_ori, dist, mtx) for img_fp in img_fps]
+```
+
 # Scripts
 1. intrinsic: 
     - get_chessboard_mapping: map the location of chessboard on the image.

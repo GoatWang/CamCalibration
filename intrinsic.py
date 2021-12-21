@@ -97,16 +97,15 @@ def plot_3d_eval(rvecs, tvecs, mtx, objpoints, imgpoints, width, height, ax=None
 if __name__ == '__main__':
     # Lucid camera spec>: https://thinklucid.com/product/triton-2-8-mp-imx429/
     # Len spec: https://vst.co.jp/zh-hant/machine-vision-lenses-zh-hant/sv-h-series/
-    WIDTH, HEIGHT = 2840, 2840
-    PIXEL_SIZE = 0.00274 # mm (µm/1000)
+    WIDTH, HEIGHT = 710, 710 # 2840, 2840
+    PIXEL_SIZE = 0.00274 * 4 # mm (µm/1000)
     CHECKERBOARD = (7, 10)
     BLOCK_SIZE = 34 # mm
     pkl_dir = 'pkls'
     if not os.path.exists(pkl_dir):
         os.mkdir(pkl_dir)
 
-    # img_dir = os.path.join('images', 'Stereo20210726', 'videocap_20210726170727') # 212500080
-    img_dir = os.path.join('images', 'Stereo20210726', 'videocap_20210727152040') # 212500081
+    img_dir = 'chessboard'
     img_fps = glob.glob(img_dir+r'\*.png')
     objpoints, imgpoints = get_chessboard_mapping(img_fps, CHECKERBOARD, BLOCK_SIZE, imshow=False)
     ret, mtx_ori, dist, rvecs, tvecs, mtx, roi = find_intrinsic_params(objpoints, imgpoints, (HEIGHT, WIDTH))
