@@ -13,7 +13,7 @@ It recommended to print the [chessboard](checkboard_src/Checkerboard-A3-35mm-10x
 Please ensure that the chessboard is paste to a flat surface.
 
 ## Usage
-```
+```python
 from intrinsic import get_chessboard_mapping, find_intrinsic_params, undistort
 WIDTH, HEIGHT = 710, 710 # image size
 PIXEL_SIZE = 0.00274 * 4 # in mm(µm/1000) unit, no need if focal length (in mm unit) not needed
