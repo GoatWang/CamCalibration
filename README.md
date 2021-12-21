@@ -16,7 +16,6 @@ Please ensure that the chessboard is paste to a flat surface.
 ```python
 from intrinsic import get_chessboard_mapping, find_intrinsic_params, undistort
 WIDTH, HEIGHT = 710, 710 # image size
-PIXEL_SIZE = 0.00274 * 4 # in mm(µm/1000) unit, no need if focal length (in mm unit) not needed
 CHECKERBOARD = (7, 10) # the `point` (not block) on the chessboard
 BLOCK_SIZE = 34 # in mm unit, the size of the block on the chessboard
 img_dir = 'chessboard'
