@@ -3,7 +3,7 @@ This repo is used to calibrate intrinsic params and the relational extrinsic par
 
 # Chessboard
 ## Printing
-It recommended to print the [chessboard](checkboard_src/Checkerboard-A3-35mm-10x7.pdf) in A3 paper. And the block size will be 34 mm.
+It recommended to print the [chessboard](assets/checkboard_src/Checkerboard-A3-35mm-10x7.pdf) in A3 paper. And the block size will be 34 mm.
 
 ## Point Counting
 10x7 means the intersection points not the count of blocks. For example, the following chessboard has (4, 3) shape.
@@ -51,7 +51,7 @@ imgs = [undistort(cv2.imread(img_fp), mtx_ori, dist, mtx) for img_fp in img_fps]
     python intrinsic_eval.py
     ```
 
-3. extrinsic: 
+3. extrinsic(**This is not finished.**): 
     - Intro: Calibrate the relation location and rotation of stereo camera. **This is not finished.**.
 
 4. aero_triangulation: provide aero_triangulation calculation functions to do the conversion between 2D image pixels and 3D real-world points.
@@ -62,27 +62,5 @@ imgs = [undistort(cv2.imread(img_fp), mtx_ori, dist, mtx) for img_fp in img_fps]
 ├─assets
 │  ├─checkboard_src     
 │  └─chessboard_shortcut
-├─images
-│  ├─Stereo20210723     
-│  │  ├─videocap_20210723180801
-│  │  ├─videocap_20210723181402
-│  │  ├─videocap_20210723181858
-│  │  └─videocap_20210723182805
-│  ├─Stereo20210726
-│  │  ├─videocap_20210726170727
-│  │  └─videocap_20210727152040
-│  ├─Stereo20210727
-│  │  ├─videocap_20210728164254
-│  │  └─videocap_20210728165049
-│  └─Testing
-│      ├─videocap_20210706164922
-│      ├─videocap_20210707121346
-│      └─videocap_20210707130315
-├─pkls
-└─__pycache__
-```
-
-2. intro
-    - images/Stereo20210726: Used for single camera intrinsic calibration.
-    - images/Stereo20210727: Used for stereo camera relational extrinsic calibration.
-    - pkls: Temp files.
+chessboard
+   └─212500080_2021-07-26-17-11-33-259040_resize.png
