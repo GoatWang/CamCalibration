@@ -50,6 +50,8 @@ imgs = [undistort(cv2.imread(img_fp), mtx_ori, dist, mtx) for img_fp in img_fps]
     ```
     python intrinsic_eval.py
     ```
+    - Output
+    ![camera_location_3d](assets\output\camera_location_3d.png)
 
 3. extrinsic(**This is not finished.**): 
     - Intro: Calibrate the relation location and rotation of stereo camera. **This is not finished.**.
